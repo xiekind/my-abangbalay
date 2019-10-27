@@ -1,31 +1,56 @@
 <template>
-<v-card id="card" flat
+<div>
+  <v-card 
+    id="card" 
+    flat
     class="mx-auto"
-    max-width="600"
-  >
-    <v-img
-      class="white--text align-end"
-      height="200px"
-      :src="require('@/assets/images/logo1.png')"
+    max-width="600px"
     >
-    </v-img>
-
-    <v-card-text>
-      <div><h4>Whitehaven Beach</h4></div>
-    </v-card-text>
-
     <center>
+    <div id="logo">
+      <v-img
+      :src="require('@/assets/images/abanglogo.png')">
+      </v-img>
+    </div>
+      <v-card-text>
+        <div><h4>New in Cebu? Just stay calm, wait and search.</h4><h4 id="text2">We will find safe home for you.</h4></div>
+      </v-card-text>
       <b-form class="searchbar">
-        <b-form-input id="input-1" size="m" v-model="form.search" type="text" placeholder="Search places.."><v-icon>mdi-home</v-icon></b-form-input>
+        <b-form-input id="input-1" size="m" v-model="form.search" type="text" placeholder="Search places.."></b-form-input>
       </b-form>
+      <v-icon id="searchicon">mdi-magnify</v-icon>
     </center>
+    <div id="stickman">
+      <v-img
+      height="200px"
+      :src="require('@/assets/images/img1.png')">
+      </v-img>
+    </div>
   </v-card>
+
+</div> 
+
 </template>
 
 <style>
+#searchicon{
+  float: left !important;
+  margin-top: -5% !important;
+  margin-left: 70% !important;
+  z-index: 1 !important;
+}
 
+#stickman{
+  float: right !important;
+  height: auto !important;
+  width: 160px !important;
+  margin-top: -33% !important;
+  margin-right: -14% !important;
+}
 #card{
   background-color: transparent !important;
+  height: auto !important;
+  margin-top: 12%;
 }
 #input-1 {
   max-width: 50%;
@@ -35,7 +60,9 @@
 #home{
   margin-top: 30%;
 }
-
+#text2{
+  color: white !important;
+}
 </style>
 
 <script>

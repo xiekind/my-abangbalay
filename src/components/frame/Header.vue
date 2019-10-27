@@ -5,15 +5,13 @@
         <v-img 
           @click="redirect('/homepage')"
           id="logo"
-          :src="require('@/assets/images/abanglogo2.png')"
+          :src="require('@/assets/images/abanglogo.png')"
           class="my-3"
           contain
           height="45">
         </v-img>
       </v-toolbar-title>
-
       <v-spacer></v-spacer>
-
       <v-toolbar-items >
         <v-btn text medium id="items" @click="redirect('/signin')">Sign in</v-btn>
         <v-divider
@@ -43,7 +41,7 @@
   color: white !important;
 }
 #logo{
-  margin-left: -15%;
+  margin-left: -30% !important;
   cursor: pointer !important;
 }
 
