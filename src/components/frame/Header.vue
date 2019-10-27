@@ -25,7 +25,7 @@
           inset
           vertical>
         </v-divider>
-        <v-btn text medium id="items">About us</v-btn>
+        <v-btn text medium id="items" @click="redirect('/about')">About us</v-btn>
       </v-toolbar-items>
     </v-toolbar>
   </div>

@@ -18,7 +18,7 @@
       <b-form class="searchbar">
         <b-form-input id="input-1" size="m" v-model="form.search" type="text" placeholder="Search places.."></b-form-input>
       </b-form>
-      <v-icon id="searchicon">mdi-magnify</v-icon>
+      <v-icon id="searchicon" dark>mdi-magnify</v-icon>
     </center>
     <div id="stickman">
       <v-img

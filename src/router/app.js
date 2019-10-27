@@ -1,7 +1,7 @@
 export default {
     routes: [{
         path: '/signin',
-        name: 'singin',
+        name: 'signin',
         component: resolve => require(['modules/Signin.vue'], resolve),
         meta: {
             tokenRequired: false
@@ -35,6 +35,14 @@ export default {
         path: '/view',
         name: 'view',
         component: resolve => require(['modules/View.vue'], resolve),
+        meta: {
+            tokenRequired: false
+        }
+    },
+    {
+        path: '/about',
+        name: 'about',
+        component: resolve => require(['modules/About.vue'], resolve),
         meta: {
             tokenRequired: false
         }
