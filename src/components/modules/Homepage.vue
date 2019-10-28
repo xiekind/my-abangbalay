@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="home">
   <v-card 
     id="card" 
     flat
@@ -7,18 +7,18 @@
     max-width="600px"
     >
     <center>
-    <div id="logo">
+    <!-- <div id="logo">
       <v-img
-      :src="require('@/assets/images/abanglogo.png')">
+      :src="require('@/assets/images/madam.png')">
       </v-img>
-    </div>
+    </div> -->
       <v-card-text>
         <div><h4>New in Cebu? Just stay calm, wait and search.</h4><h4 id="text2">We will find safe home for you.</h4></div>
       </v-card-text>
-      <b-form class="searchbar">
-        <b-form-input id="input-1" size="m" v-model="form.search" type="text" placeholder="Search places.."></b-form-input>
-      </b-form>
-      <v-icon id="searchicon" dark>mdi-magnify</v-icon>
+      <b-form>
+        <b-form-input id="input-1" size="m" v-model="search" type="text" placeholder="Search places.."></b-form-input> 
+        <b-button id="searchbtn" variant="primary" size="m" @click="filter_search()"><v-icon dark>mdi-magnify</v-icon></b-button>
+      </b-form>    
     </center>
     <div id="stickman">
       <v-img
@@ -27,16 +27,16 @@
       </v-img>
     </div>
   </v-card>
-
 </div> 
 
 </template>
 
 <style>
-#searchicon{
+
+#searchbtn{
   float: left !important;
-  margin-top: -5% !important;
-  margin-left: 70% !important;
+  margin-top: -6.5% !important;
+  margin-left: 75% !important;
   z-index: 1 !important;
 }
 
@@ -44,18 +44,18 @@
   float: right !important;
   height: auto !important;
   width: 160px !important;
-  margin-top: -33% !important;
-  margin-right: -14% !important;
+  margin-top: -38% !important;
+  margin-right: -18% !important;
 }
 #card{
   background-color: transparent !important;
   height: auto !important;
-  margin-top: 12%;
+  margin-top: 20%;
 }
 #input-1 {
   max-width: 50%;
-  border-radius: 5px;
   height: auto;
+  
 }
 #home{
   margin-top: 30%;
@@ -67,14 +67,19 @@
 
 <script>
 
+// import ROUTER from 'router'
 
 export default {
-  data() {
+  name: "home",
+  data(){
     return {
-      form: {
-        search: ""
-      }
-    };
-  }
-};
+      search: ''
+    }
+  },
+    methods: {
+        filter_search(){
+          alert("Results of: "+this.search);
+        }
+    }
+}
 </script>

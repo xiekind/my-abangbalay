@@ -1,8 +1,5 @@
 const path = require('path');
 module.exports = {
-  "transpileDependencies": [
-    "vuetify"
-  ],
   configureWebpack: {
     resolve: {
       alias: {
@@ -14,5 +11,8 @@ module.exports = {
         "services": path.resolve(__dirname, 'src/services')
       }
     }
-  }
+  },
+  "transpileDependencies": [
+    "vuetify"
+  ]
 }

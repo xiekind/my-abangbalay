@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="topnav">
     <v-toolbar id="toolbar" flat >
       <v-toolbar-title>
         <v-img 
@@ -48,18 +48,15 @@
 </style>
 
 <script>
-import AUTH from 'services/auth'
+
 import ROUTER from 'router'
+
 export default {
-  data(){
-    return {
-      auth: AUTH
-    }
-  },
-    methods: {
-        redirect(route){
-            ROUTER.push(route)  
-        }
-    }
+  name: "headernav",
+  methods: {
+      redirect(route){
+          ROUTER.push(route)  
+      }
+  }
 }
 </script>

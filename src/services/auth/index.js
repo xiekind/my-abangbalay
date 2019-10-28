@@ -38,6 +38,6 @@ export default {
         sessionStorage.setItem("Last name", lname),
         sessionStorage.setItem("Username", uname),
         sessionStorage.setItem("Email", email),
-        ROUTER.push('/userinfo');
+        ROUTER.push('/');
     }
 }
