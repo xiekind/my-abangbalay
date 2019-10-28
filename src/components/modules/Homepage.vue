@@ -15,17 +15,14 @@
       <v-card-text>
         <div><h4>New in Cebu? Just stay calm, wait and search.</h4><h4 id="text2">We will find safe home for you.</h4></div>
       </v-card-text>
-      <!-- <b-form>
-        <b-form-input id="input-1" size="m" v-model="search" type="text" placeholder="Search places.."></b-form-input> 
-        <b-button id="searchbtn" variant="primary" size="m" @click="filter_search()"><v-icon dark>mdi-magnify</v-icon></b-button>
-      </b-form>     -->
        <v-col cols="12" sm="6">
           <v-text-field 
+          @keyup.enter="filter_search"
             v-model="search"
             solo
             label="Search places.."
             prepend-inner-icon="mdi-magnify"
-          ></v-text-field><v-btn><v-icon dark>mdi-magnify</v-icon></v-btn>
+          ></v-text-field>
         </v-col>
     </center>
     <div id="stickman">
@@ -51,11 +48,13 @@
 #card{
   background-color: transparent !important;
   height: auto !important;
+  margin-top: 25% !important;
 }
 
 #text2{
   color: white !important;
 }
+
 </style>
 
 <script>
@@ -71,7 +70,11 @@ export default {
   },
     methods: {
         filter_search(){
-          alert("Results of: "+this.search);
+          if(this.search == ''){
+            alert("Please Provide an input");
+          }else{
+            alert("Results of: "+this.search);
+          }
         }
     }
 }

@@ -1,6 +1,6 @@
 <template>
 <div>
-  <v-app id="sigin">
+  <v-app id="signin">
     <v-content>
       <v-container class="fill-height" fluid>
         <v-row align="center" justify="center">
@@ -60,8 +60,9 @@
 
 <script>
 
+
 export default {
-  name: 'singin',
+  name: 'signin',
   props: {
     source: String
   }
