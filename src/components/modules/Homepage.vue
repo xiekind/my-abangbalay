@@ -1,81 +1,95 @@
 <template>
-<div class="home">
-  <v-card 
-    id="card" 
-    flat
-    class="mx-auto"
-    max-width="600px"
-    >
-    <center>
-    <!-- <div id="logo">
+  <div class="home">
+    <v-card id="card" flat class="mx-auto" max-width="600px">
+      <center>
+        <!-- <div id="logo">
       <v-img
       :src="require('@/assets/images/logox.png')">
       </v-img>
-    </div> -->
-      <v-card-text>
-        <div><h4>New in Cebu? Just stay calm, wait and search.</h4><h4 id="text2">We will find safe home for you.</h4></div>
-      </v-card-text>
-       <v-col cols="12" sm="6">
-          <v-text-field 
-          @keyup.enter="filter_search"
+        </div>-->
+        <v-card-text>
+          <div>
+            <h4>New in Cebu? Just stay calm, wait and search.</h4>
+            <h4 id="text2">We will find safe home for you.</h4>
+          </div>
+        </v-card-text>
+        <v-col cols="12" sm="6">
+          <!-- <v-text-field
+            @keyup.enter="filter_search"
             v-model="search"
             solo
             label="Search places.."
             prepend-inner-icon="mdi-magnify"
-          ></v-text-field>
+          ></v-text-field> -->
+    <v-autocomplete
+      @keyup.enter="filter_search"
+      v-model="select"
+      :loading="loading"
+      :place="place"
+      :search-input.sync="search"
+      cache-place
+      class="mx-8"
+      flat
+      hide-no-data
+      hide-details
+      label="Search places.."
+      solo-inverted
+    ></v-autocomplete>
         </v-col>
-    </center>
-    <div id="stickman">
-      <v-img
-      height="200px"
-      :src="require('@/assets/images/img1.png')">
-      </v-img>
-    </div>
-  </v-card>
-</div> 
-
+      </center>
+      <div id="stickman">
+        <v-img height="200px" :src="require('@/assets/images/img1.png')"></v-img>
+      </div>
+    </v-card>
+  </div>
 </template>
 
 <style>
-
-#stickman{
+#stickman {
   float: right !important;
   height: auto !important;
   width: 160px !important;
   margin-top: -35% !important;
   margin-right: -18% !important;
 }
-#card{
+#card {
   background-color: transparent !important;
   height: auto !important;
-  margin-top: 25% !important;
+  margin-top: 15% !important;
 }
 
-#text2{
+#text2 {
   color: white !important;
 }
-
 </style>
 
 <script>
-
 // import ROUTER from 'router'
 
 export default {
   name: "home",
-  data(){
+  data() {
     return {
-      search: ''
-    }
+      places: [
+        'Talamban',
+        'Banilad'
+      ],
+      select: "",
+    };
   },
-    methods: {
-        filter_search(){
-          if(this.search == ''){
-            alert("Please Provide an input");
-          }else{
-            alert("Results of: "+this.search);
-          }
-        }
+  // computed: {
+  //   filterSearch(){
+  //     alert("asd")
+  //   }
+  // },
+  methods: {
+    filter_search() {
+      if (this.select == "") {
+        alert("Please Provide an input");
+      } else {
+        alert("Results of: " + this.select);
+      }
     }
-}
+  }
+};
 </script>

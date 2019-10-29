@@ -1,16 +1,7 @@
-import AUTH from 'services/auth'
+// import AUTH from 'services/auth'
 
 let beforeEnter = (to, from, next) => {
-    // AUTH.currentPath = to.path
-    if(to.meta.tokenRequired === true){
-        if(AUTH.user != null){
-            next()
-        }else{
-            next({ path: '/homepage'})
-        }
-    }else{
-        next()
-    }
+    next();
 }
 
 var devRoutes = []

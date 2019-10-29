@@ -1,13 +1,13 @@
 <template>
-<div>
-  <v-app id="signin">
-    <v-content>
+<div >
+  <v-app >
+    <v-content id="test">
       <v-container class="fill-height" fluid>
         <v-row align="center" justify="center">
           <v-col cols="12" sm="8" md="4">
             <v-card class="elevation-12">
               <v-toolbar color="primary" dark flat>
-                <v-toolbar-title>Login form</v-toolbar-title>
+                <v-toolbar-title>Signin form</v-toolbar-title>
                 <v-spacer></v-spacer>
                 <v-tooltip bottom>
                   <template v-slot:activator="{ on }">
@@ -34,13 +34,12 @@
               </v-toolbar>
               <v-card-text>
                 <v-form>
-                  <v-text-field label="Login" name="login" prepend-icon="person" type="text"></v-text-field>
-
+                  <v-text-field label="Login" name="login" prepend-icon="mdi-home" type="text"></v-text-field>
                   <v-text-field
                     id="password"
                     label="Password"
                     name="password"
-                    prepend-icon="lock"
+                    prepend-icon="mdi-lock"
                     type="password"
                   ></v-text-field>
                 </v-form>
@@ -58,13 +57,21 @@
   </div>
 </template>
 
-<script>
+<style scoped>
 
+#test{
+    background: #45aba6 !important;
+}
+</style>
+
+
+<script>
 
 export default {
   name: 'signin',
   props: {
     source: String
   }
-};
+  
+}
 </script>
