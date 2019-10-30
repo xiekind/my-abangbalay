@@ -21,7 +21,7 @@
             label="Search places.."
             prepend-inner-icon="mdi-magnify"
           ></v-text-field> -->
-    <v-autocomplete
+    <!-- <v-autocomplete
       @keyup.enter="filter_search"
       v-model="select"
       :loading="loading"
@@ -34,6 +34,15 @@
       hide-details
       label="Search places.."
       solo-inverted
+    ></v-autocomplete> -->
+    <v-autocomplete
+      label="Search places.."
+      class="mx-2"
+      solo-inverted
+      :items="places"
+      clear-icon
+      v-model="select"
+      @keyup.enter="test"
     ></v-autocomplete>
         </v-col>
       </center>
@@ -64,32 +73,19 @@
 </style>
 
 <script>
-// import ROUTER from 'router'
-
-export default {
-  name: "home",
-  data() {
-    return {
-      places: [
-        'Talamban',
-        'Banilad'
-      ],
-      select: "",
-    };
-  },
-  // computed: {
-  //   filterSearch(){
-  //     alert("asd")
-  //   }
-  // },
-  methods: {
-    filter_search() {
-      if (this.select == "") {
-        alert("Please Provide an input");
-      } else {
-        alert("Results of: " + this.select);
+  export default {
+    data () {
+      return {
+        select: '',
+        places: [
+          'Banilad', 'Talamban' 
+        ],
+      }
+    },
+    methods:{
+      test(){
+        alert(this.select)
       }
     }
   }
-};
 </script>
