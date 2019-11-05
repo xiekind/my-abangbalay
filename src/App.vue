@@ -27,7 +27,7 @@ export default {
   /* background-size: cover !important; */
   /* background: #45aba6 !important;
   /* background-size: cover !important; */
-  height: 100vh !important;
+  height: 200vh !important;
   /* overflow: auto !important; */
   /* max-height: 200vh !important; */
 }
