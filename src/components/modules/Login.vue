@@ -9,7 +9,7 @@
               alt="Avatar"
             >
           </div>
-          <h4 class="modal-title">Login</h4>
+          <h4 class="modal-title">Logins</h4>
         </div>
         <div class="modal-body">
           <div class="form-group">
