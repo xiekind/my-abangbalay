@@ -23,7 +23,7 @@ export default {
 
 <style>
 #app {
-    background: #45aba6 !important;
+    background: white !important;
   /* background-size: cover !important; */
   /* background: #45aba6 !important;
   /* background-size: cover !important; */
