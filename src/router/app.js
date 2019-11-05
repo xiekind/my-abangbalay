@@ -1,17 +1,33 @@
 export default {
 
     routes: [{
-        path: '/signin',
-        name: 'signin',
-        component: resolve => require(['components/modules/SignIn.vue'], resolve),
+        path: '/login',
+        name: 'login',
+        component: resolve => require(['components/modules/Login.vue'], resolve),
         meta: {
             tokenRequired: false
         }
     },
     {
-        path: '/signup',
-        name: 'signup',
-        component: resolve => require(['components/modules/SignUp.vue'], resolve),
+        path: '/createaccount',
+        name: 'createaccount',
+        component: resolve => require(['components/modules/CreateAccount.vue'], resolve),
+        meta: {
+            tokenRequired: false
+        }
+    },
+    {
+        path: '/about',
+        name: 'about',
+        component: resolve => require(['components/modules/About.vue'], resolve),
+        meta: {
+            tokenRequired: false
+        }
+    },
+    {
+        path: '/dashboard',
+        name: 'dashboard',
+        component: resolve => require(['components/modules/Dashboard.vue'], resolve),
         meta: {
             tokenRequired: false
         }

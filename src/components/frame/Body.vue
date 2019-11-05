@@ -2,7 +2,7 @@
     <div>
         <transition>    
             <router-view ></router-view>
-            <!-- <Homepage :key="1"></Homepage> -->
+            <Homepage></Homepage>
         </transition>
     </div>
 </template>
@@ -13,8 +13,11 @@
 </style>
 
 <script>
-// import Homepage from 'components/modules/Homepage.vue'
+import Homepage from 'components/modules/Homepage.vue'
 export default {
     name: 'appbody',
+    components: {
+        Homepage
+    }
 }
 </script>

@@ -1,5 +1,7 @@
 <template>
-    <div></div>
+    <div class="dashboard">
+        <h1>Hleoow</h1>
+    </div>
 </template>
 
 

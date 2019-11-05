@@ -1,11 +1,11 @@
 <template>
 <div class="topnav">
-    <v-toolbar id="toolbar" flat >
+    <v-toolbar id="toolbar" >
       <v-toolbar-title>
         <v-img 
           @click="redirect('/homepage')"
           id="logo"
-          :src="require('@/assets/images/abanglogo.png')"
+          :src="require('@/assets/images/MyLogo.png')"
           class="my-3"
           contain
           height="45">
@@ -13,13 +13,7 @@
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items >
-        <v-btn text medium id="items" @click="redirect('/signin')">Sign in</v-btn>
-        <v-divider
-          class="mx-4"
-          inset
-          vertical>
-        </v-divider>
-        <v-btn text medium id="items" @click="redirect('/signup')">Sign up</v-btn>
+        <v-btn text medium id="items" @click="redirect('/login')">Login</v-btn>
         <v-divider
           class="mx-4"
           inset
@@ -36,9 +30,6 @@
 @import "assets/styles/colors.scss";
 #toolbar{
   background-color: transparent !important;
-}
-#items{
-  color: white !important;
 }
 #logo{
   margin-left: -30% !important;

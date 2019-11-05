@@ -1,16 +1,21 @@
 <template>
- <v-container class="grey lighten-5" id="container">
-<v-card>
-    <v-row no-gutters>
-      <v-col>
-        <div class="modal-dialog modal-login">
+
+  <div class="Create">
+      <div class="modal-dialog modal-login">
         <div class="modal-content">
           <div class="modal-header">
-            <h4 class="modal-title">Login</h4>
+            <div class="avatar">
+              <img src="https://icon-library.net/images/avatar-icon-png/avatar-icon-png-8.jpg" alt="Avatar">
+            </div>
+            <h4 class="modal-title">Create account</h4>
           </div>
           <div class="modal-body">
-              <div class="form-group">
+            <div class="form-group">
                 <input v-model="username" type="text" class="form-control" placeholder="Username"
+                  required>
+              </div>
+              <div class="form-group">
+                <input v-model="email" type="text" class="form-control" placeholder="Email"
                   required>
               </div>
               <div class="form-group">
@@ -18,47 +23,34 @@
                   required>
               </div>
               <div class="form-group">
-                <button type="submit" id="submit_user" class="btn btn-primary btn-lg btn-block login-btn" v-on:click="submit">Login</button>
+                <button type="submit" id="submit_user" class="btn btn-primary btn-lg btn-block login-btn" v-on:click="submit">Create</button>
               </div>
-          </div>
+              <center>
+                <p>Already have an account?</p>
+                <router-link to="/login">Login</router-link>
+          </center>
+          </div>         
         </div>
       </div>
-      </v-col>
-      <v-divider
-          class="mx-4"
-          inset
-          vertical>
-        </v-divider>
-      <v-col>
-        <!-- <v-card id="logo" class="pa-2" tile outlined> -->
-            <v-img
-            :src="require('@/assets/images/new.svg')">
-            </v-img>
-        <!-- </v-card> -->
-      </v-col>
-    </v-row>
-    </v-card>
-  </v-container>
+    </div>
 
 </template>
+
 <style scoped lang="scss">
+
 @import "assets/styles/colors.scss";
-    #logo{
-        border-radius: 10px !important;
-    }
-    #container{
-        margin-top: 10% !important;
-        height: auto !important;
-        width: 900px !important;
+
+  .Create{
+      margin-top: $D20px !important;
     }
   .modal-login {
       color: $modal-login !important;
       width: $width350 !important;
     }
     .modal-login .modal-content {
-      margin-top: $D20px !important;
+      margin-top: 30% !important;
       border-radius: $border-radius !important;
-      border: $none !important;
+      border: 1px solid gray !important;
     }
     .modal-login .modal-header {
       border-bottom: $none !important;
@@ -127,18 +119,21 @@
     }
     .modal-login .btn:hover,
     .modal-login .btn:focus {
-      background: $backgroundColor !important;
+      background: black !important;
       outline: $none !important;
     }
 </style>
 
 <script>
+// import ROUTER from 'router';
 
 export default {
   data() {
     return {
-        n: ''
+      email: null,
+      password: null,
+      username: null
     }
   }
-};
+}
 </script>
