@@ -1,5 +1,6 @@
 <template>
   <div id="LoginForm">
+    
     <div class="modal-dialog modal-login">
       <div class="modal-content">
         <div class="modal-header">
@@ -38,6 +39,7 @@
         </div>
       </div>
     </div>
+
   </div>
 </template>
 

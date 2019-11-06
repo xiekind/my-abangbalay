@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    
     <v-card id="card" flat class="mx-auto" max-width="600px">
       <center>
         <div>
@@ -25,7 +26,7 @@
         hide-details
         placeholder="e.g Talamban"
       ></v-autocomplete>
-      <v-btn icon>
+      <v-btn icon @click="test">
         <v-icon>mdi-magnify</v-icon>
       </v-btn>
     </v-toolbar>
@@ -49,7 +50,7 @@
   export default {
     data () {
       return {
-        select: null,
+        select: '',
         places: [
           'Banilad', 'Talamban' 
         ],
