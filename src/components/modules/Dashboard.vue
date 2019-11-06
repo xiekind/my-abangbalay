@@ -1,6 +1,6 @@
 <template>
     <div class="dashboard">
-        <h1>Hleoow</h1>
+        <h1>Hleoowss</h1>
     </div>
 </template>
 
