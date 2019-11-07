@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div id="home">
     <v-card id="card" flat class="mx-auto" max-width="600px">
       <center>
         <div>
@@ -32,7 +32,14 @@
         </v-col>
       </center>
     </v-card>
+
+  <div id="searched">
+
+
   </div>
+
+  </div>
+
 </template>
 
 <style>
@@ -46,6 +53,7 @@
 </style>
 
 <script>
+
   export default {
     data () {
       return {

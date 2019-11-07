@@ -1,5 +1,5 @@
 <template>
-  <div id="LoginForm">
+  <div id="login">
     <div class="modal-dialog modal-login">
       <div class="modal-content">
         <div class="modal-header">
@@ -9,7 +9,7 @@
               alt="Avatar"
             >
           </div>
-          <h4 class="modal-title">Logins</h4>
+          <h4 class="modal-title">Login</h4>
         </div>
         <div class="modal-body">
           <div class="form-group">

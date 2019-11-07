@@ -1,9 +1,9 @@
 <template>
-<div class="topnav">
+<div id="topnav">
     <v-toolbar id="toolbar" >
       <v-toolbar-title>
         <v-img 
-          @click="redirect('/homepage')"
+          @click="redirect('/')"
           id="logo"
           :src="require('@/assets/images/MyLogo.png')"
           class="my-3"

@@ -1,6 +1,6 @@
 <template>
 
-  <div class="Create">
+  <div id="Create">
       <div class="modal-dialog modal-login">
         <div class="modal-content">
           <div class="modal-header">

@@ -1,5 +1,5 @@
 <template>
-    <div id="owner">
+    <div id="results">
         <h1>Hleoow</h1>
     </div>
 </template>
