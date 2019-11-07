@@ -28,8 +28,10 @@ export default {
 #app {
     background: white !important;
 }
+
 html , body{
   overflow-y: auto !important;
+
 }
 
 </style>

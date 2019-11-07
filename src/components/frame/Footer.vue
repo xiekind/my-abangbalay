@@ -29,6 +29,7 @@
       <v-card-text class="white--text">
         <strong><img :src="require('@/assets/images/MyFrontLogo.png')"></strong><br>
         <!-- <br>{{ new Date().getFullYear() }}  -->
+
       </v-card-text>
     </v-card>
   </v-footer>
@@ -60,3 +61,4 @@ img{
 }
 
 </style>
+

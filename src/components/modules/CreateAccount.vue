@@ -37,9 +37,7 @@
 </template>
 
 <style scoped lang="scss">
-
 @import "assets/styles/colors.scss";
-
   .Create{
       margin-top: $D20px !important;
     }
@@ -126,7 +124,6 @@
 
 <script>
 // import ROUTER from 'router';
-
 export default {
   data() {
     return {
