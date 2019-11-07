@@ -8,7 +8,7 @@
         <v-card-text>
           <div>
             <h4>New in Cebu? Just stay calm, wait and search.</h4>
-            <h4>We will find safe home for you.</h4>
+            <h4>We will find safe home for you..</h4>
           </div>
         </v-card-text>
         <v-col cols="12" sm="6">
