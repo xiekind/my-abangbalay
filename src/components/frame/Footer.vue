@@ -53,7 +53,7 @@
 <style scoped>
 
 .Footer{
-  margin-top: 50% !important;
+  margin-top: 30% !important;
 }
 
 img{
