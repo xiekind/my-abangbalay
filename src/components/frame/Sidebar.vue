@@ -1,70 +1,59 @@
 <template>
-<div>
-  <v-app id="signin">
-    <v-content>
-      <v-container class="fill-height" fluid>
-        <v-row align="center" justify="center">
-          <v-col cols="12" sm="8" md="4">
-            <v-card class="elevation-12">
-              <v-toolbar color="primary" dark flat>
-                <v-toolbar-title>Login form</v-toolbar-title>
-                <v-spacer></v-spacer>
-                <v-tooltip bottom>
-                  <template v-slot:activator="{ on }">
-                    <v-btn :href="source" icon large target="_blank" v-on="on">
-                      <v-icon>mdi-code-tags</v-icon>
-                    </v-btn>
-                  </template>
-                  <span>Source</span>
-                </v-tooltip>
-                <v-tooltip right>
-                  <template v-slot:activator="{ on }">
-                    <v-btn
-                      icon
-                      large
-                      href="#"
-                      target="_blank"
-                      v-on="on"
-                    >
-                      <v-icon>mdi-codepen</v-icon>
-                    </v-btn>
-                  </template>
-                  <span>Codepen</span>
-                </v-tooltip>
-              </v-toolbar>
-              <v-card-text>
-                <v-form>
-                  <v-text-field label="Login" name="login" prepend-icon="person" type="text"></v-text-field>
-
-                  <v-text-field
-                    id="password"
-                    label="Password"
-                    name="password"
-                    prepend-icon="lock"
-                    type="password"
-                  ></v-text-field>
-                </v-form>
-              </v-card-text>
-              <v-card-actions>
-                <v-spacer></v-spacer>
-                <v-btn color="primary">Login</v-btn>
-              </v-card-actions>
-            </v-card>
+  <v-container fluid>
+    <v-navigation-drawer
+      :width="width"
+      :value="true"
+      stateless
+    >
+      <v-img :aspect-ratio="16/9" src="https://cdn.vuetifyjs.com/images/parallax/material.jpg">
+        <v-row align="end" class="lightbox white--text pa-2 fill-height">
+          <v-col>
+            <div class="subheading">Jonathan Lee</div>
+            <div class="body-1">heyfromjonathan@gmail.com</div>
           </v-col>
         </v-row>
-      </v-container>
-    </v-content>
-  </v-app>
-  </div>
+      </v-img>
+
+      <v-list>
+        <template v-for="(item, i) in items">
+          <v-divider v-if="item.divider" :key="i"></v-divider>
+          <v-list-item v-else :key="item.title">
+            <v-list-item-action>
+              <v-icon>{{ item.icon }}</v-icon>
+            </v-list-item-action>
+            <v-list-item-title>{{ item.title }}</v-list-item-title>
+          </v-list-item>
+        </template>
+      </v-list>
+    </v-navigation-drawer>
+  </v-container>
 </template>
 
-<script>
-
-
-export default {
-  name: 'signin',
-  props: {
-    source: String
+<style scoped>
+  .v-navigation-drawer {
+    transition: none !important;
   }
-};
+
+  .lightbox {
+    box-shadow: 0 0 20px inset rgba(0, 0, 0, 0.2);
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.4) 0%, transparent 72px);
+  }
+</style>
+
+<script>
+  export default {
+    data: () => ({
+      width: 300,
+      items: [
+        { icon: 'inbox', title: 'Inbox' },
+        { icon: 'star', title: 'Starred' },
+        { icon: 'send', title: 'Sent mail' },
+        { icon: 'drafts', title: 'Drafts' },
+        { divider: true },
+        { icon: 'mail', title: 'All mail' },
+        { icon: 'delete', title: 'Trash' },
+        { icon: 'error', title: 'Spam' },
+      ],
+    }),
+  }
 </script>
