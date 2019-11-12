@@ -46,7 +46,7 @@
               >
                 <v-card-actions>
                   <v-btn class="ma-2" color="orange darken-2" dark>
-                    <v-icon dark left>mdi-heart</v-icon>
+                    <v-icon dark left>mdi-pin</v-icon>Location
                   </v-btn>
                 </v-card-actions>
               </v-img>
@@ -58,13 +58,33 @@
               <v-card-text class="text--primary">
                 <div>• 5 rooms for male</div>
                 <div>• 5 rooms for female</div>
+                <div>• Free water and electricity</div>
+                <div>• Fans and double deck</div>
+                <div>• Lady guard at night</div>
               </v-card-text>
+              <div class="text-left" id="stars">
+                <v-rating
+                  v-model="rating"
+                  color="yellow darken-3"
+                  background-color="grey darken-1"
+                  empty-icon="$ratingFull"
+                  half-increments
+                  hover
+                ></v-rating>
+              </div>
             </v-col>
             <v-divider class="mx-4" inset vertical></v-divider>
             <v-col>
-              <v-card-text class="text--primary">
-                <p1>₱ 1,500 per monthly</p1>
+              <center>
+              <v-card-text class="text-success">
+                <br />
+                <br />
+                <h3>₱ 1,500 monthly</h3>
               </v-card-text>
+                <v-btn class="ma-2" color="success">
+                  <v-icon dark left>mdi-check</v-icon>Select
+                </v-btn>
+              </center>
             </v-col>
           </v-row>
         </v-card>
@@ -74,10 +94,10 @@
 </template>
 
 <style>
+
 #img {
   margin-left: 8% !important;
   margin-top: 2% !important;
-  margin-bottom: 2% !important;
   cursor: pointer !important;
 }
 .results {
@@ -95,6 +115,7 @@
 export default {
   data() {
     return {
+      rating: 4,
       select: "",
       places: ["Banilad", "Talamban"],
       items: [
