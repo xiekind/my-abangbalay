@@ -18,7 +18,7 @@ export default {
                 Password: password,
                 Email: email
             });
-            ROUTER.push("/dashboard");
+            ROUTER.push("/customerdashboard");
         }
     },
     login(username, password) {
@@ -29,15 +29,9 @@ export default {
         }
         return null;
     },
-    logout() {
-        this.user = null,
-        ROUTER.push('/view')
-    },
-    saveInfo(fname,lname,uname,email){
-        sessionStorage.setItem("First name", fname),
-        sessionStorage.setItem("Last name", lname),
-        sessionStorage.setItem("Username", uname),
-        sessionStorage.setItem("Email", email),
-        ROUTER.push('/');
-    }
+    // saveInfo(username,email){
+    //     sessionStorage.setItem("Username", username),
+    //     sessionStorage.setItem("Email", email),
+    //     ROUTER.push('/');
+    // }
 }
