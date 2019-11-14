@@ -13,23 +13,28 @@
           <h4 class="modal-title">Login</h4>
         </div>
         <div class="modal-body">
-          <div class="form-group">
-            <input v-model="email" type="text" class="form-control" placeholder="Email" required>
-          </div>
-          <div class="form-group">
-            <input
+            <v-text-field
+              v-model="email"
+              label="Email"
+              placeholder=""
+              type="text"
+              outlined
+              dense
+            ></v-text-field>
+          <v-text-field
               v-model="password"
+              label="Password"
+              placeholder=""
               type="password"
-              class="form-control"
-              placeholder="Password"
-              required
-            >
-          </div>
+              outlined
+              dense
+            ></v-text-field>
           <div class="form-group">
             <button
               type="submit"
               class="btn btn-primary btn-lg btn-block login-btn"
               @click="login"
+              v-on:click="overlay = !overlay"
             >Next</button>
           </div>
           <center>
@@ -39,7 +44,9 @@
         </div>
       </div>
     </div>
-
+  <v-overlay :value="overlay">
+      <v-progress-circular indeterminate size="64"></v-progress-circular>
+    </v-overlay>
   </div>
 </template>
 
@@ -50,11 +57,11 @@
   color: $modal-login !important;
   width: $width350 !important;
 }
-.modal-login .modal-content {
-  margin-top: 30% !important;
-  border-radius: $border-radius !important;
-  border: 1px solid gray !important;
-}
+// .modal-login .modal-content {
+//   margin-top: 30% !important;
+//   border-radius: $border-radius !important;
+//   border: 1px solid gray !important;
+// }
 .modal-login .modal-header {
   border-bottom: $none !important;
   position: $relative !important;
@@ -129,32 +136,41 @@
 
 <script>
 import ROUTER from "router";
-import axios from 'axios';
+// import axios from 'axios';
 export default {
   data() {
     return {
+      overlay: false,
       email: null,
       password: null
     };
   },
+  watch: {
+      overlay (val) {
+        val && setTimeout(() => {
+          this.overlay = false
+        }, 3000)
+      },
+    },
   methods: {
     login() {
-      axios
-        .post("http://localhost:5555/login", {
-          username: this.email,
-          password: this.password
-        })
-        .then(res => {
-          console.log(res);
-          if (res.data.login) {
-            ROUTER.push('/dashboard')
-          } else {
-            alert('try again')
-          }
-        })
-        .catch(err => {
-          console.log(err);
-        });
+      ROUTER.push('/customerdashboard')
+      // axios
+      //   .post("http://localhost:5555/login", {
+      //     username: this.email,
+      //     password: this.password
+      //   })
+      //   .then(res => {
+      //     console.log(res);
+      //     if (res.data.login) {
+      //       ROUTER.push('/customerdashboard')
+      //     } else {
+      //       alert('try again')
+      //     }
+      //   })
+      //   .catch(err => {
+      //     console.log(err);
+      //   });
     }
   }
 };

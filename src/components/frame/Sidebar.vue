@@ -1,59 +1,41 @@
 <template>
-  <v-container fluid>
-    <v-navigation-drawer
-      :width="width"
-      :value="true"
-      stateless
-    >
-      <v-img :aspect-ratio="16/9" src="https://cdn.vuetifyjs.com/images/parallax/material.jpg">
-        <v-row align="end" class="lightbox white--text pa-2 fill-height">
-          <v-col>
-            <div class="subheading">Jonathan Lee</div>
-            <div class="body-1">heyfromjonathan@gmail.com</div>
-          </v-col>
-        </v-row>
-      </v-img>
+  <v-card
+    height="400"
+    width="256"
+    class="mx-auto"
+  >
+    <v-navigation-drawer permanent>
+      <v-list-item>
+        <v-list-item-content>
+          <v-list-item-title class="title">
+            Application
+          </v-list-item-title>
+          <v-list-item-subtitle>
+            subtext
+          </v-list-item-subtitle>
+        </v-list-item-content>
+      </v-list-item>
 
-      <v-list>
-        <template v-for="(item, i) in items">
-          <v-divider v-if="item.divider" :key="i"></v-divider>
-          <v-list-item v-else :key="item.title">
-            <v-list-item-action>
-              <v-icon>{{ item.icon }}</v-icon>
-            </v-list-item-action>
+      <v-divider></v-divider>
+
+      <v-list
+        dense
+        nav
+      >
+        <v-list-item
+          v-for="item in items"
+          :key="item.title"
+          link
+        >
+          <v-list-item-icon>
+            <v-icon>{{ item.icon }}</v-icon>
+          </v-list-item-icon>
+
+          <v-list-item-content>
             <v-list-item-title>{{ item.title }}</v-list-item-title>
-          </v-list-item>
-        </template>
+          </v-list-item-content>
+        </v-list-item>
       </v-list>
     </v-navigation-drawer>
-  </v-container>
+  </v-card>
 </template>
-
-<style scoped>
-  .v-navigation-drawer {
-    transition: none !important;
-  }
-
-  .lightbox {
-    box-shadow: 0 0 20px inset rgba(0, 0, 0, 0.2);
-    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.4) 0%, transparent 72px);
-  }
-</style>
-
-<script>
-  export default {
-    data: () => ({
-      width: 300,
-      items: [
-        { icon: 'inbox', title: 'Inbox' },
-        { icon: 'star', title: 'Starred' },
-        { icon: 'send', title: 'Sent mail' },
-        { icon: 'drafts', title: 'Drafts' },
-        { divider: true },
-        { icon: 'mail', title: 'All mail' },
-        { icon: 'delete', title: 'Trash' },
-        { icon: 'error', title: 'Spam' },
-      ],
-    }),
-  }
-</script>
