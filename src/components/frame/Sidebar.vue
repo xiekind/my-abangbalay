@@ -39,3 +39,13 @@
     </v-navigation-drawer>
   </v-card>
 </template>
+
+<script>
+export default {
+  name : "sidebar",
+  path : "/sidebar",
+  data () {
+    
+  }
+}
+</script>
